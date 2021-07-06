@@ -7,6 +7,7 @@
 
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "ComposeViewController.h"
 #import <Parse/Parse.h>
 
 @interface HomeViewController ()
@@ -27,6 +28,10 @@
     }];
 }
 
+- (IBAction)onTapCamera:(id)sender {
+    [self performSegueWithIdentifier:@"composeSegue" sender:nil];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -34,7 +39,12 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    LoginViewController *loginViewController = [segue destinationViewController];
+    if ([segue.identifier isEqual: @"logoutSegue"]) {
+        LoginViewController *loginViewController = [segue destinationViewController];
+    }
+    else if ([segue.identifier isEqual: @"composeSegue"]) {
+        ComposeViewController *composeViewController = [segue destinationViewController];
+    }
 }
 
 @end
