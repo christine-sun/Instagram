@@ -177,6 +177,9 @@
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onTapCancel:" destination="kly-nQ-VpF" eventType="touchUpInside" id="71r-qe-7al"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="4V1-hb-g6S">
@@ -184,11 +187,15 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="onTapShare:" destination="kly-nQ-VpF" eventType="touchUpInside" id="kNm-hP-Vrl"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="dcI-xR-tOm" id="KUa-pN-4ew"/>
+                        <segue destination="Uzf-1L-cXh" kind="presentation" identifier="homeSegue" modalPresentationStyle="fullScreen" id="D6d-2C-Lx8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea7-8B-2zG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,6 +240,9 @@
             <point key="canvasLocation" x="2834.7826086956525" y="101.78571428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D6d-2C-Lx8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="instagram_logo" width="840" height="300"/>

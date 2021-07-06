@@ -6,6 +6,8 @@
 //
 
 #import "ComposeViewController.h"
+#import "HomeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController ()
 
@@ -32,6 +34,15 @@
     }
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (IBAction)onTapCancel:(id)sender {
+    [self performSegueWithIdentifier:@"homeSegue" sender:nil];
+}
+
+- (IBAction)onTapShare:(id)sender {
+    [self performSegueWithIdentifier:@"homeSegue" sender:nil];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
@@ -63,14 +74,13 @@
     return newImage;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    HomeViewController *homeViewController = [segue destinationViewController];
 }
-*/
 
 @end
