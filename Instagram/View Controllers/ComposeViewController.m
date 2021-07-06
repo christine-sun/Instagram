@@ -12,6 +12,8 @@
 @interface ComposeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *postImage;
+@property (weak, nonatomic) IBOutlet UITextView *captionText;
 
 @end
 
@@ -43,6 +45,8 @@
 - (IBAction)onTapShare:(id)sender {
     [self performSegueWithIdentifier:@"homeSegue" sender:nil];
     
+    // Upload the image to Parse
+    [Post postUserImage:self.postImage withCaption:self.captionText.text withCompletion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
@@ -54,6 +58,7 @@
     // Resize image before uploading
     CGSize imageDimensions = CGSizeMake(1000, 1000);
     UIImage *resizedImage = [self resizeImage:editedImage withSize:imageDimensions];
+    self.postImage = resizedImage;
     [self.imageView setImage:resizedImage];
         
     // Dismiss UIImagePickerController to go back to your original view controller

@@ -194,6 +194,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionText" destination="K1L-KB-Jy0" id="R6Z-7W-lsT"/>
                         <outlet property="imageView" destination="dcI-xR-tOm" id="KUa-pN-4ew"/>
                         <segue destination="Uzf-1L-cXh" kind="presentation" identifier="homeSegue" modalPresentationStyle="fullScreen" id="D6d-2C-Lx8"/>
                     </connections>
