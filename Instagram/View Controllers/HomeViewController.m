@@ -8,6 +8,7 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 #import "PostCell.h"
 #import <Parse/Parse.h>
 
@@ -27,6 +28,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    [self.tableView setRowHeight:UITableViewAutomaticDimension];
     
     [self fetchPosts];
     
@@ -89,10 +92,20 @@
     
     if ([segue.identifier isEqual: @"logoutSegue"]) {
         LoginViewController *loginViewController = [segue destinationViewController];
-    }
-    else if ([segue.identifier isEqual: @"composeSegue"]) {
+    } else if ([segue.identifier isEqual: @"composeSegue"]) {
         ComposeViewController *composeViewController = [segue destinationViewController];
+    } else if ([segue.identifier isEqual: @"detailsSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.arrayOfPosts[indexPath.row];
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        // detailsViewController.post = post;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
 }
 
 @end

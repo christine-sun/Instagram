@@ -25,6 +25,7 @@
     _post = post;
     self.postImageView.file = post[@"image"];
     [self.postImageView loadInBackground];
+    //[self.postImageView setClipsToBounds:YES];
     self.captionLabel.text = post[@"caption"];
 }
 

@@ -29,6 +29,7 @@
     
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
+    // enable selection option
     // Check that the camera is indeed supported on the device before trying to present it.
     /*if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -58,7 +59,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Resize image before uploading
-    CGSize imageDimensions = CGSizeMake(300, 300);
+    CGSize imageDimensions = CGSizeMake(100, 100);
     UIImage *resizedImage = [self resizeImage:editedImage withSize:imageDimensions];
     self.postImage = resizedImage;
     [self.imageView setImage:resizedImage];
