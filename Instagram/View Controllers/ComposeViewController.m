@@ -26,14 +26,16 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
+    
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
     // Check that the camera is indeed supported on the device before trying to present it.
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    /*if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     } else {
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
+    }*/
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
@@ -56,7 +58,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Resize image before uploading
-    CGSize imageDimensions = CGSizeMake(1000, 1000);
+    CGSize imageDimensions = CGSizeMake(300, 300);
     UIImage *resizedImage = [self resizeImage:editedImage withSize:imageDimensions];
     self.postImage = resizedImage;
     [self.imageView setImage:resizedImage];
