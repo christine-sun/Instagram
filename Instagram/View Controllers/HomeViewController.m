@@ -28,8 +28,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
-    [self.tableView setRowHeight:UITableViewAutomaticDimension];
+    //[self.tableView setRowHeight:UITableViewAutomaticDimension];
     
     [self fetchPosts];
     
@@ -83,6 +82,11 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"detailsSegue" sender:cell];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -90,22 +94,14 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqual: @"logoutSegue"]) {
-        LoginViewController *loginViewController = [segue destinationViewController];
-    } else if ([segue.identifier isEqual: @"composeSegue"]) {
-        ComposeViewController *composeViewController = [segue destinationViewController];
-    } else if ([segue.identifier isEqual: @"detailsSegue"]) {
+    if ([segue.identifier isEqual: @"detailsSegue"]) {
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Post *post = self.arrayOfPosts[indexPath.row];
-        
-        DetailsViewController *detailsViewController = [segue destinationViewController];
-        // detailsViewController.post = post;
+        UINavigationController *nav = [segue destinationViewController];
+        DetailsViewController *detailsViewController = (DetailsViewController *)nav.topViewController;
+        detailsViewController.post = post;
     }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
 }
 
 @end
