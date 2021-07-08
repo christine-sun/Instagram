@@ -59,7 +59,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Resize image before uploading
-    CGSize imageDimensions = CGSizeMake(100, 100);
+    CGSize imageDimensions = CGSizeMake(1000, 1000);
     UIImage *resizedImage = [self resizeImage:editedImage withSize:imageDimensions];
     self.postImage = resizedImage;
     [self.imageView setImage:resizedImage];
