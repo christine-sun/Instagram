@@ -37,10 +37,13 @@
 }
 
 - (IBAction)onTapLogOut:(id)sender {
-    [self performSegueWithIdentifier:@"logoutSegue" sender:nil];
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        self.view.window.rootViewController = loginVC;
     }];
+    
 }
 
 - (IBAction)onTapCamera:(id)sender {
@@ -80,11 +83,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     NSLog(@"%@", indexPath);
     Post *post = self.arrayOfPosts[indexPath.row];
     [self performSegueWithIdentifier:@"detailsSegue" sender:post];
     
+}
+- (IBAction)onLogout:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+
+    self.view.window.rootViewController = loginVC;
 }
 
 #pragma mark - Navigation
@@ -95,12 +103,7 @@
     // Pass the selected object to the new view controller.
     
     if ([segue.identifier isEqual: @"detailsSegue"]) {
-//        UITableViewCell *tappedCell = sender;
-//        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-//        Post *post = self.arrayOfPosts[indexPath.row];
-//        NSLog(@"%@", indexPath.row);
-        UINavigationController *nav = [segue destinationViewController];
-        DetailsViewController *detailsViewController = (DetailsViewController *)nav.topViewController;
+        DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = (Post *) sender;
     }
 }

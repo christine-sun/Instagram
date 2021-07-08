@@ -42,14 +42,14 @@
 }
 
 - (IBAction)onTapCancel:(id)sender {
-    [self performSegueWithIdentifier:@"homeSegue" sender:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)onTapShare:(id)sender {
-    [self performSegueWithIdentifier:@"homeSegue" sender:nil];
-    
     // Upload the image to Parse
     [Post postUserImage:self.postImage withCaption:self.captionText.text withCompletion:nil];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
