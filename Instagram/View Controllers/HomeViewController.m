@@ -28,7 +28,6 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    //[self.tableView setRowHeight:UITableViewAutomaticDimension];
     
     [self fetchPosts];
     
@@ -49,7 +48,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return 20;
     return self.arrayOfPosts.count;
 }
 
@@ -57,7 +55,6 @@
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.row];
-    NSLog(@"%@", cell.post);
     return cell;
 }
 
@@ -83,8 +80,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"detailsSegue" sender:cell];
+//    PostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    NSLog(@"%@", indexPath);
+    Post *post = self.arrayOfPosts[indexPath.row];
+    [self performSegueWithIdentifier:@"detailsSegue" sender:post];
+    
 }
 
 #pragma mark - Navigation
@@ -95,12 +95,13 @@
     // Pass the selected object to the new view controller.
     
     if ([segue.identifier isEqual: @"detailsSegue"]) {
-        UITableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Post *post = self.arrayOfPosts[indexPath.row];
+//        UITableViewCell *tappedCell = sender;
+//        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+//        Post *post = self.arrayOfPosts[indexPath.row];
+//        NSLog(@"%@", indexPath.row);
         UINavigationController *nav = [segue destinationViewController];
         DetailsViewController *detailsViewController = (DetailsViewController *)nav.topViewController;
-        detailsViewController.post = post;
+        detailsViewController.post = (Post *) sender;
     }
 }
 

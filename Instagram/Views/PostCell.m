@@ -25,8 +25,14 @@
     _post = post;
     self.postImageView.file = post[@"image"];
     [self.postImageView loadInBackground];
-    //[self.postImageView setClipsToBounds:YES];
     self.captionLabel.text = post[@"caption"];
+    
+    NSDate *createdAt = post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MM/dd/YY";
+    
+    self.timestampLabel.text = [formatter stringFromDate:createdAt];
+    NSLog(@"%@", [formatter stringFromDate:createdAt]);
 }
 
 @end
