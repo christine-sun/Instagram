@@ -37,7 +37,7 @@
             NSLog(@"Error: %@", error.localizedDescription);
         } else {
             NSLog(@"User registered successfully");
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [self configureHome];
         }
     }];
 }
@@ -51,12 +51,16 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-            self.view.window.rootViewController = homeVC;
+            [self configureHome];
         }
     }];
+}
+
+-(void)configureHome {
+    [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    self.view.window.rootViewController = homeVC;
 }
 
 #pragma mark - Navigation
