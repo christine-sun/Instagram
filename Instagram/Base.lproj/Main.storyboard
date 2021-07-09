@@ -147,6 +147,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ud2-C6-Cv6">
                                 <rect key="frame" x="295" y="9.6666666666666643" width="79" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="camera" catalog="system"/>
                                 <connections>
                                     <action selector="onTapCamera:" destination="Mus-ho-8aj" eventType="touchUpInside" id="8k1-fC-bJ9"/>
@@ -239,6 +240,7 @@
         <!--Profile-->
         <scene sceneID="4iV-Do-Auq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cip-Vq-Zp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7p4-Si-peC" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sum-qg-G3E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -257,9 +259,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="R82-Se-eFs"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cip-Vq-Zp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912" y="102"/>
+            <point key="canvasLocation" x="5798" y="102"/>
         </scene>
         <!--Explore-->
         <scene sceneID="tbx-tw-8LK">
@@ -289,6 +290,7 @@
         <!--Likes-->
         <scene sceneID="vma-sA-p3T">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaf-hT-mY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="xAM-j5-Npv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Sl-qz-t2g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -307,9 +309,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Likes" image="heart" catalog="system" id="GB8-Id-vST"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uaf-hT-mY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3969" y="102"/>
+            <point key="canvasLocation" x="4858" y="102"/>
         </scene>
         <!--New Post-->
         <scene sceneID="mif-g8-tlW">
@@ -319,7 +320,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-xR-tOm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-xR-tOm">
                                 <rect key="frame" x="16" y="149" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="9Zv-zA-iq5"/>
@@ -333,18 +334,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Vk-VUM">
+                                <rect key="frame" x="16" y="285" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="onTapCamera:" destination="kly-nQ-VpF" eventType="touchUpInside" id="wuz-PE-6IW"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-uM-Qbb">
-                                <rect key="frame" x="224" y="104" width="88" height="30"/>
+                                <rect key="frame" x="16" y="313" width="88" height="30"/>
                                 <state key="normal" title="Photo Album"/>
                                 <connections>
                                     <action selector="onTapPhotoAlbum:" destination="kly-nQ-VpF" eventType="touchUpInside" id="3QO-sx-7Gk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Vk-VUM">
-                                <rect key="frame" x="95" y="104" width="54" height="30"/>
-                                <state key="normal" title="Camera"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tr-jj-6mI">
+                                <rect key="frame" x="326" y="108" width="48" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Share"/>
                                 <connections>
-                                    <action selector="onTapCamera:" destination="kly-nQ-VpF" eventType="touchUpInside" id="wuz-PE-6IW"/>
+                                    <action selector="onTapShare:" destination="kly-nQ-VpF" eventType="touchUpInside" id="4sm-Rx-bCV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpb-Gz-87t">
+                                <rect key="frame" x="19" y="111" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onTapCancel:" destination="kly-nQ-VpF" eventType="touchUpInside" id="C23-EN-ntb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -354,16 +370,21 @@
                             <constraint firstItem="Ssd-L4-JsB" firstAttribute="trailing" secondItem="K1L-KB-Jy0" secondAttribute="trailing" constant="5" id="2nY-gj-Aah"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="leading" secondItem="dcI-xR-tOm" secondAttribute="trailing" constant="8" id="CD3-xk-Neg"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="bottom" secondItem="dcI-xR-tOm" secondAttribute="bottom" id="IVg-JF-jPB"/>
-                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="top" id="J8A-Ik-GaI"/>
-                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="16" id="M2g-6v-HS0"/>
+                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="top" constant="28" id="J8A-Ik-GaI"/>
+                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="197" id="M2g-6v-HS0"/>
                             <constraint firstItem="dcI-xR-tOm" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="16" id="NS7-62-zqY"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="top" secondItem="dcI-xR-tOm" secondAttribute="top" id="NSx-vu-YEd"/>
-                            <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="bottom" constant="15" id="Ok5-HE-JZ4"/>
+                            <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="bottom" constant="-166" id="Ok5-HE-JZ4"/>
+                            <constraint firstItem="8tr-jj-6mI" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="20" id="QNh-c4-LJD"/>
                             <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="61" id="X4T-DD-x5o"/>
-                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="leading" secondItem="wSh-Vk-VUM" secondAttribute="trailing" constant="75" id="fuS-S4-S9O"/>
-                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="95" id="nBH-Vr-Hsq"/>
+                            <constraint firstItem="Ssd-L4-JsB" firstAttribute="trailing" secondItem="8tr-jj-6mI" secondAttribute="trailing" constant="16" id="aCl-wH-Pmz"/>
+                            <constraint firstItem="Gpb-Gz-87t" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="19" id="eAA-eF-IXt"/>
+                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="leading" secondItem="wSh-Vk-VUM" secondAttribute="trailing" constant="-54" id="fuS-S4-S9O"/>
+                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="16" id="nBH-Vr-Hsq"/>
+                            <constraint firstItem="Gpb-Gz-87t" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="23" id="zb4-tv-uTa"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Post" image="camera" catalog="system" id="Db5-t9-c9U"/>
                     <navigationItem key="navigationItem" title="New Post" id="Z1V-Ck-s90">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="QOf-nS-J3F">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5e0-TV-ulf">
@@ -393,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea7-8B-2zG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2403" y="839"/>
+            <point key="canvasLocation" x="3923" y="839"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RUu-k8-877">
@@ -407,8 +428,9 @@
                     <connections>
                         <segue destination="Uzf-1L-cXh" kind="relationship" relationship="viewControllers" id="YEo-Td-ay0"/>
                         <segue destination="Sji-CS-6Ee" kind="relationship" relationship="viewControllers" id="EfO-qB-csw"/>
-                        <segue destination="xAM-j5-Npv" kind="relationship" relationship="viewControllers" id="AFs-Vp-Njt"/>
-                        <segue destination="7p4-Si-peC" kind="relationship" relationship="viewControllers" id="GkD-kH-hFL"/>
+                        <segue destination="kly-nQ-VpF" kind="relationship" relationship="viewControllers" id="GN1-jR-og0"/>
+                        <segue destination="xAM-j5-Npv" kind="relationship" relationship="viewControllers" id="eZz-zP-unP"/>
+                        <segue destination="7p4-Si-peC" kind="relationship" relationship="viewControllers" id="8z9-Ru-K6q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlT-cf-Z1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -438,6 +460,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="YEo-Td-ay0"/>
+        <segue reference="kHQ-7V-lhA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>

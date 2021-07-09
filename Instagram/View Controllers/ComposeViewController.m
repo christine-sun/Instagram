@@ -40,15 +40,23 @@
 }
 
 - (IBAction)onTapCancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self clearAndGoHome];
 }
 
 - (IBAction)onTapShare:(id)sender {
     // Upload the image to Parse
     [Post postUserImage:self.postImage withCaption:self.captionText.text withCompletion:nil];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self clearAndGoHome];
 }
+
+- (void)clearAndGoHome {
+    self.captionText.text = @"";
+    self.imageView.image = nil;
+    
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     
