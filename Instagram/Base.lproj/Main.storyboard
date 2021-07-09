@@ -81,10 +81,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="rN5-Eu-8CX" customClass="PostCell">
-                                        <rect key="frame" x="0.0" y="49" width="390" height="444.33334350585938"/>
+                                        <rect key="frame" x="0.0" y="49" width="390" height="425.33334350585938"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rN5-Eu-8CX" id="nyi-Qd-V53">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="444.33334350585938"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="425.33334350585938"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="cec-nA-mPD" customClass="PFImageView">
@@ -105,7 +105,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="u59-ts-Xkl" secondAttribute="trailing" constant="15" id="LQI-ld-YIA"/>
                                                 <constraint firstItem="u59-ts-Xkl" firstAttribute="top" secondItem="cec-nA-mPD" secondAttribute="bottom" constant="15" id="YIn-sD-fLl"/>
                                                 <constraint firstItem="cec-nA-mPD" firstAttribute="leading" secondItem="nyi-Qd-V53" secondAttribute="leading" id="doR-qQ-OcK"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u59-ts-Xkl" secondAttribute="bottom" constant="19" id="j9B-px-yXf"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u59-ts-Xkl" secondAttribute="bottom" id="j9B-px-yXf"/>
                                                 <constraint firstItem="cec-nA-mPD" firstAttribute="top" secondItem="nyi-Qd-V53" secondAttribute="top" id="jkc-k1-mqt"/>
                                                 <constraint firstItem="u59-ts-Xkl" firstAttribute="leading" secondItem="nyi-Qd-V53" secondAttribute="leading" constant="16" id="kRP-61-iLG"/>
                                             </constraints>
