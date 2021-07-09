@@ -12,6 +12,8 @@
 #import "PostCell.h"
 #import <Parse/Parse.h>
 
+#import "HeaderView.h"
+
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -22,9 +24,14 @@
 
 @implementation HomeViewController
 
-NSMutableArray *data;
-NSString *cellIdentifier = @"PostCell";
-NSString *headerViewIdentifier = @"TableViewHeaderView";
+//NSMutableArray *data;
+//NSString *cellIdentifier = @"PostCell";
+//NSString *headerViewIdentifier = @"HeaderView";
+
+//struct Post {
+//    UIImage *profilePic;
+//    NSString *username;
+//};
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +41,7 @@ NSString *headerViewIdentifier = @"TableViewHeaderView";
     self.tableView.delegate = self;
     
     [self fetchPosts];
-    data = [[NSMutableArray alloc] init];
+//    data = [[NSMutableArray alloc] init];
     
     //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"PostCell"];
     //[self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:headerViewIdentifier];
@@ -45,23 +52,31 @@ NSString *headerViewIdentifier = @"TableViewHeaderView";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
-    PostCell *cell = self.arrayOfPosts[section];
-    NSLog(@"%@", cell);
-    header.textLabel.text = self.arrayOfPosts[section]; //may need ot fix return the username
-    return header;
+    
+    NSArray *header = [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:NULL];
+    header = header.firstObject;
+    HeaderView *head = header;
+    
+    Post *post = self.arrayOfPosts[section];
+    NSDictionary *postAuthor = post.author;
+    NSLog(@"%@", postAuthor[@"username"]);
+    head.usernameLabel.text = postAuthor[@"username"];
+    [head.headerImageView.layer setCornerRadius:19];
+ //   head.usernameLabel.text = post.author
+//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
+//    PostCell *cell = self.arrayOfPosts[section];
+//    NSLog(@"%@", cell);
+//    header.textLabel.text = @"hello"; //may need ot fix return the username
+//    return header;
+    return head;
 }
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return data.count;
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return @"hello";
 //}
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"hello";
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
+    return 45; //makea constant
 }
 
 - (IBAction)onTapLogOut:(id)sender {
@@ -91,7 +106,7 @@ NSString *headerViewIdentifier = @"TableViewHeaderView";
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.section];
-    [data addObject:cell.post];
+    
     return cell;
 }
 
