@@ -17,6 +17,15 @@
 
 @end
 
+// The dimension of the square profile picture
+CGFloat profilePicDimension = 65;
+
+// The spacing between each post
+CGFloat spacing = 2;
+
+// The number of posts per row
+CGFloat postsPerLine = 3;
+
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
@@ -27,15 +36,13 @@
     
     PFUser *user = [PFUser currentUser];
     self.usernameLabel.text = user[@"username"];
+    [self.profileImageView.layer setCornerRadius:profilePicDimension/2];
     
-    [self.profileImageView.layer setCornerRadius:65];
-    
+    // Configure posts layout
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
-    layout.minimumInteritemSpacing = 2;
-    layout.minimumLineSpacing = 2;
-    
-    CGFloat postsPerLine = 3;
-    CGFloat dimension = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postsPerLine - 0)) / postsPerLine;
+    layout.minimumInteritemSpacing = spacing;
+    layout.minimumLineSpacing = spacing;
+    CGFloat dimension = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * postsPerLine) / postsPerLine;
     layout.itemSize = CGSizeMake(dimension, dimension);
 }
 
@@ -53,10 +60,6 @@
             self.myArrayOfPosts = posts;
             [self.collectionView reloadData];
         }
-        else {
-            // display an error message saying posts could not be loaded
-            NSLog(@"%@", error.localizedDescription);
-        }
     }];
 }
 
@@ -72,15 +75,5 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.myArrayOfPosts.count;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

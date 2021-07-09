@@ -23,6 +23,12 @@
 
 @implementation HomeViewController
 
+// The height of the header for each post
+CGFloat headerHeight = 45;
+
+// The dimension of the square profile picture
+CGFloat profilePicDimension = 38;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -46,7 +52,7 @@
     NSDictionary *postAuthor = post.author;
     
     head.usernameLabel.text = postAuthor[@"username"];
-    [head.headerImageView.layer setCornerRadius:19];
+    [head.headerImageView.layer setCornerRadius:profilePicDimension/2];
     
     NSDate *createdAt = post.createdAt;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -57,17 +63,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 45; //makea constant
+    return headerHeight;
 }
 
 - (IBAction)onTapLogOut:(id)sender {
-    
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         self.view.window.rootViewController = loginVC;
     }];
-    
 }
 
 - (IBAction)onTapCamera:(id)sender {
@@ -86,7 +90,6 @@
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.section];
-    
     return cell;
 }
 
@@ -103,16 +106,11 @@
             self.arrayOfPosts = posts;
             [self.tableView reloadData];
         }
-        else {
-            // display an error message saying posts could not be loaded
-            NSLog(@"%@", error.localizedDescription);
-        }
         [self.refreshControl endRefreshing];
     }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", indexPath);
     Post *post = self.arrayOfPosts[indexPath.section];
     [self performSegueWithIdentifier:@"detailsSegue" sender:post];
     
