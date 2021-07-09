@@ -157,7 +157,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="EFE-lD-WFO" id="peB-5u-YyO"/>
-                        <segue destination="kly-nQ-VpF" kind="show" identifier="composeSegue" id="kHQ-7V-lhA"/>
                         <segue destination="tJo-Rf-hgf" kind="show" identifier="detailsSegue" id="g8v-HX-Wx0"/>
                     </connections>
                 </viewController>
@@ -235,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pq-Rg-c8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="839"/>
+            <point key="canvasLocation" x="1928" y="839"/>
         </scene>
         <!--Profile-->
         <scene sceneID="4iV-Do-Auq">
@@ -260,7 +259,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="R82-Se-eFs"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="5798" y="102"/>
+            <point key="canvasLocation" x="5789" y="102"/>
         </scene>
         <!--Explore-->
         <scene sceneID="tbx-tw-8LK">
@@ -285,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yco-Kd-zoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2965" y="102"/>
+            <point key="canvasLocation" x="2909" y="102"/>
         </scene>
         <!--Likes-->
         <scene sceneID="vma-sA-p3T">
@@ -321,35 +320,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-xR-tOm">
-                                <rect key="frame" x="16" y="149" width="128" height="128"/>
+                                <rect key="frame" x="16" y="105" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="9Zv-zA-iq5"/>
                                     <constraint firstAttribute="height" constant="128" id="P1N-vw-i2k"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-KB-Jy0">
-                                <rect key="frame" x="152" y="149" width="233" height="128"/>
+                                <rect key="frame" x="152" y="105" width="233" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Vk-VUM">
-                                <rect key="frame" x="16" y="285" width="54" height="30"/>
+                                <rect key="frame" x="16" y="241" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="onTapCamera:" destination="kly-nQ-VpF" eventType="touchUpInside" id="wuz-PE-6IW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-uM-Qbb">
-                                <rect key="frame" x="16" y="313" width="88" height="30"/>
+                                <rect key="frame" x="16" y="269" width="88" height="30"/>
                                 <state key="normal" title="Photo Album"/>
                                 <connections>
                                     <action selector="onTapPhotoAlbum:" destination="kly-nQ-VpF" eventType="touchUpInside" id="3QO-sx-7Gk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tr-jj-6mI">
-                                <rect key="frame" x="326" y="108" width="48" height="33"/>
+                                <rect key="frame" x="326" y="64" width="48" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Share"/>
                                 <connections>
@@ -357,7 +356,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpb-Gz-87t">
-                                <rect key="frame" x="19" y="111" width="48" height="30"/>
+                                <rect key="frame" x="19" y="67" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="onTapCancel:" destination="kly-nQ-VpF" eventType="touchUpInside" id="C23-EN-ntb"/>
@@ -414,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ea7-8B-2zG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3923" y="839"/>
+            <point key="canvasLocation" x="3882" y="102"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RUu-k8-877">
@@ -460,7 +459,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="YEo-Td-ay0"/>
-        <segue reference="kHQ-7V-lhA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
