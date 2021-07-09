@@ -49,7 +49,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 Splash screen, app icon, sign up
-![](https://i.imgur.com/8Tfj8YR.gif)
+![](https://media.giphy.com/media/ipzzyEpDYWte6PoBce/giphy.gif)
 
 Login, view feed, refresh
 ![](https://media.giphy.com/media/6BtR5haBG20D4qMVa8/giphy.gif)
@@ -58,10 +58,10 @@ Create a new post
 ![](https://media.giphy.com/media/WrqtzMORUYGycD4QAi/giphy.gif)
 
 User persistence
-![](https://i.imgur.com/PCsIJdL.gif)
+![](https://media.giphy.com/media/EvKx2v6VEDoeJsU5LA/giphy.gif)
 
 Scroll, profile, log out
-![](https://i.imgur.com/Xkkrf5i.gif)
+![](https://media.giphy.com/media/9r1PmGmxgwQCTfK6Eh/giphy.gif)
 
 ## Credits
 
