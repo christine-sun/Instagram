@@ -28,10 +28,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OI-j1-CK6">
+                        <rect key="frame" x="232" y="14" width="81" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="0OI-j1-CK6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="8DX-8f-SxK"/>
+                    <constraint firstAttribute="trailing" secondItem="0OI-j1-CK6" secondAttribute="trailing" constant="7" id="RE1-qG-pPM"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="dateLabel" destination="0OI-j1-CK6" id="wX0-Ek-Qfy"/>
                 <outlet property="headerImageView" destination="h89-DK-6QN" id="W34-pt-aXs"/>
                 <outlet property="usernameLabel" destination="Kbm-XR-opj" id="Yjv-rh-rbh"/>
             </connections>

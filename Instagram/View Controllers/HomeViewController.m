@@ -10,9 +10,8 @@
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
 #import "PostCell.h"
-#import <Parse/Parse.h>
-
 #import "HeaderView.h"
+#import <Parse/Parse.h>
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,15 +23,6 @@
 
 @implementation HomeViewController
 
-//NSMutableArray *data;
-//NSString *cellIdentifier = @"PostCell";
-//NSString *headerViewIdentifier = @"HeaderView";
-
-//struct Post {
-//    UIImage *profilePic;
-//    NSString *username;
-//};
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,10 +31,6 @@
     self.tableView.delegate = self;
     
     [self fetchPosts];
-//    data = [[NSMutableArray alloc] init];
-    
-    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"PostCell"];
-    //[self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:headerViewIdentifier];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
@@ -56,24 +42,19 @@
     NSArray *header = [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:NULL];
     header = header.firstObject;
     HeaderView *head = header;
-    
     Post *post = self.arrayOfPosts[section];
     NSDictionary *postAuthor = post.author;
-    NSLog(@"%@", postAuthor[@"username"]);
+    
     head.usernameLabel.text = postAuthor[@"username"];
     [head.headerImageView.layer setCornerRadius:19];
- //   head.usernameLabel.text = post.author
-//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
-//    PostCell *cell = self.arrayOfPosts[section];
-//    NSLog(@"%@", cell);
-//    header.textLabel.text = @"hello"; //may need ot fix return the username
-//    return header;
+    
+    NSDate *createdAt = post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MM/dd/YY";
+    head.dateLabel.text = [formatter stringFromDate:createdAt];
+
     return head;
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return @"hello";
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 45; //makea constant
@@ -94,7 +75,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return self.arrayOfPosts.count;
     return 1;
 }
 
