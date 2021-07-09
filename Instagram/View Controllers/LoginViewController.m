@@ -53,7 +53,7 @@
             NSLog(@"User logged in successfully");
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+            UIViewController *homeVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
             self.view.window.rootViewController = homeVC;
         }
     }];

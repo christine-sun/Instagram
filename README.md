@@ -36,6 +36,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] User can choose between camera and photo album in compose mode
+- [x] User can see multiple tabs along Tar Bar that represent tabs in real Instagram
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
