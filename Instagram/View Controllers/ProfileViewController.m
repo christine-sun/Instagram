@@ -17,19 +17,16 @@
 
 @end
 
-// The dimension of the square profile picture
-CGFloat profilePicDimension = 65;
-
-// The spacing between each post
-CGFloat spacing = 2;
-
-// The number of posts per row
-CGFloat postsPerLine = 3;
-
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // Define constants
+    CGFloat profilePicDimension = 128;
+    CGFloat spacing = 2;
+    CGFloat postsPerLine = 3;
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self fetchMyPosts];

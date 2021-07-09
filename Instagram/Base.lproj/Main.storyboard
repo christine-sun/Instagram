@@ -240,7 +240,6 @@
         <!--Profile-->
         <scene sceneID="4iV-Do-Auq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cip-Vq-Zp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7p4-Si-peC" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sum-qg-G3E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -309,6 +308,7 @@
                         <outlet property="usernameLabel" destination="TU9-Vz-NZ8" id="1RJ-vk-ia7"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cip-Vq-Zp1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5787.6923076923076" y="101.65876777251184"/>
         </scene>
@@ -340,7 +340,6 @@
         <!--Likes-->
         <scene sceneID="vma-sA-p3T">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uaf-hT-mY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="xAM-j5-Npv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Sl-qz-t2g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -359,6 +358,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Likes" image="heart" catalog="system" id="GB8-Id-vST"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaf-hT-mY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4858" y="102"/>
         </scene>
