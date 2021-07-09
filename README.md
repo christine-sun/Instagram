@@ -48,7 +48,20 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
+Splash screen, app icon, sign up
+![](https://i.imgur.com/8Tfj8YR.gif)
 
+Login, view feed, refresh
+![](https://media.giphy.com/media/6BtR5haBG20D4qMVa8/giphy.gif)
+
+Create a new post
+![](https://media.giphy.com/media/WrqtzMORUYGycD4QAi/giphy.gif)
+
+User persistence
+![](https://i.imgur.com/PCsIJdL.gif)
+
+Scroll, profile, log out
+![](https://i.imgur.com/Xkkrf5i.gif)
 
 ## Credits
 
@@ -56,6 +69,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 - [Parse] back-end
 - Splash screen https://twitter.com/wongmjane/status/1204103134173220864
+- Guide https://courses.codepath.org/courses/ios_university_fast_track/unit/9#!assignment
 
 
 ## Notes
