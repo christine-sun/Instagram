@@ -22,6 +22,10 @@
 
 @implementation HomeViewController
 
+NSMutableArray *data;
+NSString *cellIdentifier = @"PostCell";
+NSString *headerViewIdentifier = @"TableViewHeaderView";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -30,10 +34,34 @@
     self.tableView.delegate = self;
     
     [self fetchPosts];
+    data = [[NSMutableArray alloc] init];
+    
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"PostCell"];
+    //[self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:headerViewIdentifier];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewIdentifier];
+    PostCell *cell = self.arrayOfPosts[section];
+    NSLog(@"%@", cell);
+    header.textLabel.text = self.arrayOfPosts[section]; //may need ot fix return the username
+    return header;
+}
+
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return data.count;
+//}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"hello";
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
 }
 
 - (IBAction)onTapLogOut:(id)sender {
@@ -51,13 +79,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //return self.arrayOfPosts.count;
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.arrayOfPosts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
-    cell.post = self.arrayOfPosts[indexPath.row];
+    cell.post = self.arrayOfPosts[indexPath.section];
+    [data addObject:cell.post];
     return cell;
 }
 
@@ -84,7 +118,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%@", indexPath);
-    Post *post = self.arrayOfPosts[indexPath.row];
+    Post *post = self.arrayOfPosts[indexPath.section];
     [self performSegueWithIdentifier:@"detailsSegue" sender:post];
     
 }

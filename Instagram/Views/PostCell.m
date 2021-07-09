@@ -32,7 +32,6 @@
     formatter.dateFormat = @"MM/dd/YY";
     
     self.timestampLabel.text = [formatter stringFromDate:createdAt];
-    NSLog(@"%@", [formatter stringFromDate:createdAt]);
 }
 
 @end
