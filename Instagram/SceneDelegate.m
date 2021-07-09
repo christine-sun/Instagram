@@ -23,11 +23,15 @@
     // Persisting user session
     PFUser *user = [PFUser currentUser];
     if (user != nil) {
-        
-        // Load Chat view controller and set as root view controller
+        // Load tab bar  controller and set as root view controller
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         self.window.rootViewController = homeNavigationController;
+    } else {
+        // Load login view controller and set as root view controller
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        self.window.rootViewController = loginVC;
     }
 }
 

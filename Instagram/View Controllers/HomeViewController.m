@@ -116,10 +116,11 @@ CGFloat profilePicDimension = 38;
     
 }
 - (IBAction)onLogout:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-
-    self.view.window.rootViewController = loginVC;
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        self.view.window.rootViewController = loginVC;
+    }];
 }
 
 #pragma mark - Navigation
