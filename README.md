@@ -29,42 +29,45 @@ The following **optional** features are implemented:
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
-- [ ] Style the login page to look like the real Instagram login page.
-- [ ] Style the feed to look like the real Instagram feed.
+- [x] Style the login page to look like the real Instagram login page.
+- [x] Style the feed to look like the real Instagram feed.
 - [ ] Implement a custom camera view.
 
 The following **additional** features are implemented:
 
 - [x] User can choose between camera and photo album in compose mode
 - [x] User can see multiple tabs along Tar Bar that represent tabs in real Instagram
+- [x] Create a tab for the camera view
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How can we best promote reusability between table view and collection view cells?
+2. How can the edited image crop be edited so it is not limited to a 1:1 aspect ratio?
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap](https://getkap.co/).
 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse] back-end
+- Splash screen https://twitter.com/wongmjane/status/1204103134173220864
 
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
+Cells collapsing in table view for home feed was resolved with a placeholder image.
+Proper "show" navigation style fixed by maintaining only one main navigation controller in the storyboard.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2021 Christine Sun
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
