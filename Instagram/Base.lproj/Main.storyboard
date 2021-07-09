@@ -244,19 +244,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-xR-tOm">
-                                <rect key="frame" x="16" y="104" width="128" height="128"/>
+                                <rect key="frame" x="16" y="149" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="9Zv-zA-iq5"/>
                                     <constraint firstAttribute="height" constant="128" id="P1N-vw-i2k"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K1L-KB-Jy0">
-                                <rect key="frame" x="152" y="104" width="233" height="128"/>
+                                <rect key="frame" x="152" y="149" width="233" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-uM-Qbb">
+                                <rect key="frame" x="224" y="104" width="88" height="30"/>
+                                <state key="normal" title="Photo Album"/>
+                                <connections>
+                                    <action selector="onTapPhotoAlbum:" destination="kly-nQ-VpF" eventType="touchUpInside" id="3QO-sx-7Gk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSh-Vk-VUM">
+                                <rect key="frame" x="95" y="104" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="onTapCamera:" destination="kly-nQ-VpF" eventType="touchUpInside" id="wuz-PE-6IW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ssd-L4-JsB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -264,9 +278,14 @@
                             <constraint firstItem="Ssd-L4-JsB" firstAttribute="trailing" secondItem="K1L-KB-Jy0" secondAttribute="trailing" constant="5" id="2nY-gj-Aah"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="leading" secondItem="dcI-xR-tOm" secondAttribute="trailing" constant="8" id="CD3-xk-Neg"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="bottom" secondItem="dcI-xR-tOm" secondAttribute="bottom" id="IVg-JF-jPB"/>
+                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="top" id="J8A-Ik-GaI"/>
+                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="16" id="M2g-6v-HS0"/>
                             <constraint firstItem="dcI-xR-tOm" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="16" id="NS7-62-zqY"/>
                             <constraint firstItem="K1L-KB-Jy0" firstAttribute="top" secondItem="dcI-xR-tOm" secondAttribute="top" id="NSx-vu-YEd"/>
-                            <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="16" id="X4T-DD-x5o"/>
+                            <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="wSh-Vk-VUM" secondAttribute="bottom" constant="15" id="Ok5-HE-JZ4"/>
+                            <constraint firstItem="dcI-xR-tOm" firstAttribute="top" secondItem="Ssd-L4-JsB" secondAttribute="top" constant="61" id="X4T-DD-x5o"/>
+                            <constraint firstItem="Fv2-uM-Qbb" firstAttribute="leading" secondItem="wSh-Vk-VUM" secondAttribute="trailing" constant="75" id="fuS-S4-S9O"/>
+                            <constraint firstItem="wSh-Vk-VUM" firstAttribute="leading" secondItem="Ssd-L4-JsB" secondAttribute="leading" constant="95" id="nBH-Vr-Hsq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="Z1V-Ck-s90">
